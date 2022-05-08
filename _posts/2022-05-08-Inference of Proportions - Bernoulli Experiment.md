@@ -1,69 +1,23 @@
 ---
 layout: post
-title: Getting Started with Mason
+title: Inference of Proportions - A Bernoulli Experiment
 featured-img: sleek
 ---
 
-## Getting started
+## Bernoulli experiment
+Consider independent trials with only "success" and "failure", and if the probability of each success is $ \theta $, then these experiments are called Bernoulli experiments with parameter $ \theta $. And the distribution of whether the experimental result is "success" or "failure" is a Bernoulli $ (\theta) $ distribution. If in n Bernoulli experiments, s experiments are successful (then there must be f = n-s failures). Therefore, the number of successes is said to follow a binomial distribution with parameters $ (n,\theta) $. The Bernoulli distribution is a special case of the binomial distribution when n=1. We always hope to use the number or proportion of successful experiments to infer the parameter p. Formally, we can denote the observation x = (x1,,,) as the result of a Bernoulli experiment with parameter p. Each x takes the value 1 or 0, corresponding to "success" or "failure".
 
-I am a biostatistician working for an international biopharmaceutical R&D company. My main work is clinical trial design, statistical analysis and real-world drug cost-effectiveness analysis. I have a double master’s degree in Applied Statistics and Econometrics. My areas of interest include drug clinical trials, health economics, Bayesian statistics and modeling, R and Python.
+## Simple conjugate prior distribution
+Taking the prior distribution p(p) of p as the conjugate prior distribution Beta(a,b), then s=x1+...+xn is a sufficient statistic. Then the posterior distribution is:
+pppp
 
-We work extensively with pharmaceutical technology companies, CROs and pharmaceutical companies to conduct drug clinical trials and real-world data exploration. We now have ongoing clinical programs covering a variety of diseases including breast cancer, lung cancer and diabetes. If you are interested in participating in our project, please contact me.
+The posterior distribution is Beta(sss). If a quadratic loss function is used to estimate p, then:
+Ppp
 
-## Writing content
+The commonly used "uninformative prior distribution" is a=b=1, then beta(1,1) is a uniform distribution U(0,1) in the [0,1] interval. At this time:
+Ppp
 
-### Docs
-
-Docs are [collections](https://jekyllrb.com/docs/collections/) of pages stored under `_docs` folder. To create a new page:
-
-**1.** Create a new Markdown as `_docs/my-page.md` and write [front matter](https://jekyllrb.com/docs/frontmatter/) & content such as:
-
-```
----
-title: My Page
-permalink: /docs/my-page/
----
-
-Hello World!
-```
-
-**2.** Add the pagename to `_pages/docs.yml` file in order to list in docs navigation panel:
-
-```
-- title: My Group Title
-  docs:
-  - my-page
-```
-
-### Blog posts
-
-Add a new Markdown file such as `2017-05-09-my-post.md` and write the content similar to other post examples.
-
-### Pages
-
-The home page is located under `index.md` file. You can change the content or design completely different welcome page for your taste.
-
-In order to add a new page, create a new html or markdown file under root directory and link it in `_includes/header.html`.
-
-### Images TODO
-
-Introduce gulp optimization
-
-Breakpoint | Image Type | Width | Retina
------------- | ------------ | ------------- | -------------
-xs |Post Thumb | 535px | 1070px
-sm |Post Thumb | 500px| 1000px
-md |Post Thumb | 329.375px | 658.75px
-lg |Post Thumb | 445.625px | 891.25px
-xl |Post Thumb | 353.125px | 706.25px
+The above model can be formally described by the following formula:
+pppp
 
 
-Breakpoint | Image Type | Width | Retina
------------- | ------------ | ------------- | -------------
-xs |Post Hero | 535px | 1070px
-sm |Post Hero | 500px| 1000px
-md |Post Hero | 329.375px | 658.75px
-lg |Post Hero | 445.625px | 891.25px
-xl |Post Hero | 353.125px | 706.25px
-
-Happy hacking!
